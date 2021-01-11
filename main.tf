@@ -3,6 +3,15 @@ provider "azurerm" {
     features {}
 
 }
+terraform {
+    backend "azurerm"{
+        resource_group_name = "RG-Terraform-POC-BLOBStore"
+        storage_account_name = "tfpocstorageaccount"
+        container_name = "tfstate"
+        key = "terraform.tfstate"
+    }
+}
+
 
 resource "azurerm_resource_group" "tf_test" {
     name = "RG-Terraform-POC"
