@@ -12,7 +12,6 @@ terraform {
     }
 }
 
-
 resource "azurerm_resource_group" "tf_test" {
     name = "RG-Terraform-POC"
     location = "eastus2"
