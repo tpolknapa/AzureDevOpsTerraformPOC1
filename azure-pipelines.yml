@@ -32,7 +32,7 @@ stages:
   displayName: "Terraforming on Azure..."
   dependsOn: Build
   jobs:
-  - jobs: Provision
+  - job: Provision
     displayName: "Provisioning Container Instance"
     pool:
       vmImage: 'ubuntu-latest'
