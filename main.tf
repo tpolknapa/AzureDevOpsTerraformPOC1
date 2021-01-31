@@ -12,6 +12,13 @@ terraform {
     }
 }
 
+variable "imagebuild" {
+  type        = string
+  default     = ""
+  description = "Lastest Image Build"
+}
+
+
 resource "azurerm_resource_group" "tf_test" {
     name = "RG-Terraform-POC"
     location = "eastus2"
@@ -28,7 +35,7 @@ resource "azurerm_container_group" "tfcg_test" {
 
     container {
         name = "weatherapi"
-        image = "irietech/weatherapi"
+        image = "irietech/weatherapi:${var.imagebuild}"
             cpu = "1"
             memory = "1"
 
