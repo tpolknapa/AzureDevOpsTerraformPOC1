@@ -36,7 +36,7 @@ resource "azurerm_container_group" "tfcg_test" {
         name = "weatherapi"
         image = "irietech/weatherapi:${var.imagebuild}"
             cpu = "1"
-            memory = "1"
+            memory = "2"
 
             ports{
                 port = 80
