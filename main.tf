@@ -24,7 +24,7 @@ resource "azurerm_resource_group" "tf_test" {
 }
 
 resource "azurerm_container_group" "tfcg_test" {
-    name = "weatherapi"
+    name = "weatherapi1"
     location = azurerm_resource_group.tf_test.location
     resource_group_name = azurerm_resource_group.tf_test.name
 
@@ -33,10 +33,10 @@ resource "azurerm_container_group" "tfcg_test" {
     os_type = "Linux"
 
     container {
-        name = "weatherapi"
+        name = "weatherapi1"
         image = "irietech/weatherapi:${var.imagebuild}"
             cpu = "1"
-            memory = "2"
+            memory = "1"
 
             ports{
                 port = 80
