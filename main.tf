@@ -18,7 +18,6 @@ variable "imagebuild" {
   description = "Lastest Image Build"
 }
 
-
 resource "azurerm_resource_group" "tf_test" {
     name = "RG-Terraform-POC"
     location = "eastus2"
